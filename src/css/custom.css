@@ -1,0 +1,120 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+    --ifm-color-primary: #0d9488;
+    --ifm-color-primary-dark: #0c857a;
+    --ifm-color-primary-darker: #0b7e74;
+    --ifm-color-primary-darkest: #09685f;
+    --ifm-color-primary-light: #0ea396;
+    --ifm-color-primary-lighter: #0faa9c;
+    --ifm-color-primary-lightest: #11c0b1;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar Method labels */
+.api-method>.menu__link {
+  align-items: center;
+  justify-content: start;
+}
+
+h1, h2, h3, h4, h5, body, .navbar__title {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navbar__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar {
+    box-shadow: none;
+}
+
+.navbar-api-key-button {
+    background-color: var(--ifm-color-primary);
+    border-color: var(--ifm-color-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    transition: all 0.15s ease-in-out;
+}
+
+.navbar-api-key-button:hover {
+    background-color: var(--ifm-color-primary-light);
+    border-color: var(--ifm-color-primary-light);
+    color: white;
+}
+
+.navbar-api-key-button svg {
+    display: none;
+}
+
+.theme-doc-sidebar-container {
+    border-right: none !important;
+}
+
+.api-method>.menu__link::before {
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  margin-right: var(--ifm-spacing-horizontal);
+  text-align: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  color: white;
+}
+
+.get>.menu__link::before {
+  content: "get";
+  background-color: var(--ifm-color-primary);
+}
+
+.put>.menu__link::before {
+  content: "put";
+  background-color: var(--openapi-code-blue);
+}
+
+.post>.menu__link::before {
+  content: "post";
+  background-color: var(--openapi-code-green);
+}
+
+.delete>.menu__link::before {
+  content: "del";
+  background-color: var(--openapi-code-red);
+}
+
+.patch>.menu__link::before {
+  content: "patch";
+  background-color: var(--openapi-code-orange);
+}
