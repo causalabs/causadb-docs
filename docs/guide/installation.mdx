@@ -4,9 +4,13 @@ sidebar_position: 2
 
 # Installation
 
-## Installing the CLI/Python interface
+## CLI/Python interface
 
-CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, but should be installed regardless of whether you want to use the Python interface. The CLI (and bundled Python interface) can be installed from PyPI using:
+CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, but should be installed regardless of whether you want to use the Python interface. 
+
+### Installing the CLI/Python interface
+
+The CLI (and bundled Python interface) can be installed from PyPI using:
 
 ```bash
 pip install causadb
@@ -30,13 +34,19 @@ import causadb
 causadb.set_token("AHFDOIEUBDKSDVXHFSKH")
 ```
 
-## Installing the Node.js interface
+## Node.js interface
+
+The Node.js client is intended for use with JavaScript and Typescript, and is ideal for server-side (not client-side) software.
+
+### Installing the Node.js interface
 
 The Node.js client is available on npm, and can be installed in the standard way:
 
 ```bash
 npm install causadb
 ```
+
+### Authenticating the Node.js interface
 
 To authenticate the Node.js interface, run:
 
