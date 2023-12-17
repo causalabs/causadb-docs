@@ -4,44 +4,18 @@ sidebar_position: 1
 
 # Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Learn about CausaDB in a few minutes.
 
-## Getting Started
+## Why do I need causal AI?
 
-Get started by **creating a new site**.
+Standard AI algorithms are pattern-matching engines that are great at finding patterns in data, but they have no concept of cause-and-effect. This is a major problem when we try to use standard AI models (LLMs, neural nets, XGBoost, etc) to inform decision-making. Without understanding causation, these other algorithms confuse correlation for causation and can make inefficient and at worst damaging recommendations. 
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Causal AI models are built from the ground up to capture causal structures. This gives them an understanding of cause-and-effect, so they can be trusted to make data-driven decisions. CausaDB is a platform to make it easy to get causal AI models out of the lab and into production.
 
-### What you'll need
+## What is CausalOps?
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+CausalOps is an extension of the concept of MLOps to causal AI models. Standard MLOps practices alone aren't enough for productionising causal AI models, so CausalOps bridges the gap to make it simpler to build and maintain causal workflows. CausaDB is the only platform that makes CausalOps as easy as a few lines of code.
 
-## Generate a new site
+## Want to get started?
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+To get started with CausaDB, [get in touch](https://causa.tech) with our team to receive access credentials. If you already have your access credentials, follow the [installation instructions](./installation) in this documentation site.
