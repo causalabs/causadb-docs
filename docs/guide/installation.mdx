@@ -1,0 +1,51 @@
+---
+sidebar_position: 2
+---
+
+# Installation
+
+## Installing the CLI/Python interface
+
+CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, but should be installed regardless of whether you want to use the Python interface. The CLI (and bundled Python interface) can be installed from PyPI using:
+
+```bash
+pip install causadb
+```
+
+Once the CLI is installed, you'll need to set it up with your access credentials. You can do this by running the `login` command:
+
+```bash
+causadb login
+```
+
+Follow the instructions in the CLI to link it with your cloud account.
+
+### Authenticating the Python interface
+
+When using the Python interface on a remote instance (such as a server or Colab notebook) you'll need to authenticate within the Python interface. This can be done using the following code snippet:
+
+```python
+import causadb
+
+causadb.set_token("AHFDOIEUBDKSDVXHFSKH")
+```
+
+## Installing the Node.js interface
+
+The Node.js client is available on npm, and can be installed in the standard way:
+
+```bash
+npm install causadb
+```
+
+To authenticate the Node.js interface, run:
+
+```js
+import { CausaDB } from "causadb";
+
+CausaDB.setToken("AHFDOIEUBDKSDVXHFSKH");
+```
+
+## Next steps
+
+Once you've set up your CLI and whichever interface you're working with, it's time to get started working with causal AI on the cloud. Follow our [quickstart guide](./quickstart) to get started. 
