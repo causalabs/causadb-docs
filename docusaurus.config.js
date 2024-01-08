@@ -89,6 +89,11 @@ const config = {
                         label: "Home",
                         position: "right",
                     },
+                    {
+                        to: "https://status.causadb.com",
+                        label: "Status",
+                        position: "right",
+                    },
                     // { to: "/blog", label: "Blog", position: "right" },
                     {
                         href: "https://github.com/facebook/docusaurus",
@@ -139,7 +144,7 @@ const config = {
                 copyright: `Copyright © ${new Date().getFullYear()} Causa Ltd.`,
             },
             prism: {
-                theme: prismThemes.github,
+                theme: prismThemes.dracula,
                 darkTheme: prismThemes.dracula,
             },
         }),

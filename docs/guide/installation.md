@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## CLI/Python interface
 
-CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, but should be installed regardless of whether you want to use the Python interface. 
+CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, so should be installed regardless of whether you want to use the Python interface. 
 
 ### Installing the CLI/Python interface
 
