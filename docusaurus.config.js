@@ -40,6 +40,7 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
+                    sidebarCollapsible: false,
                     sidebarPath: "./sidebars.js",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
@@ -58,6 +59,18 @@ const config = {
         ({
             // Replace with your project's social card
             image: "img/docusaurus-social-card.jpg",
+            colorMode: {
+                defaultMode: "dark",
+                disableSwitch: false,
+            },
+            announcementBar: {
+                id: "supportus",
+                content:
+                    "🛠️ Documentation site is under active development and changes on a daily basis.",
+                backgroundColor: "#009489",
+                textColor: "#fff",
+                isCloseable: false,
+            },
             navbar: {
                 title: "CausaDB",
                 logo: {
@@ -95,11 +108,11 @@ const config = {
                         position: "right",
                     },
                     // { to: "/blog", label: "Blog", position: "right" },
-                    {
-                        href: "https://github.com/facebook/docusaurus",
-                        label: "GitHub",
-                        position: "right",
-                    },
+                    // {
+                    //     href: "https://github.com/facebook/docusaurus",
+                    //     label: "GitHub",
+                    //     position: "right",
+                    // },
                 ],
             },
             footer: {
@@ -141,6 +154,7 @@ const config = {
                 //         ],
                 //     },
                 // ],
+
                 copyright: `Copyright © ${new Date().getFullYear()} Causa Ltd.`,
             },
             prism: {

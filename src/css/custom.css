@@ -83,6 +83,12 @@ body {
     box-shadow: none;
 }
 
+.navbar__brand:hover {
+    text-decoration: none;
+    /* Darken on hover */
+    color: var(--ifm-navbar-link-color);
+}
+
 .navbar-api-key-button {
     background-color: var(--ifm-color-primary);
     border-color: var(--ifm-color-primary);
@@ -149,4 +155,8 @@ body {
 .patch>.menu__link::before {
   content: "patch";
   background-color: var(--openapi-code-orange);
+}
+
+.menu__list-item-collapsible {
+    font-weight: 700;
 }
