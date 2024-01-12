@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from "prism-react-renderer";
+import lunrSearch from "docusaurus-lunr-search";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,8 +21,8 @@ const config = {
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: "facebook", // Usually your GitHub org/user name.
-    projectName: "docusaurus", // Usually your repo name.
+    organizationName: "causalabs", // Usually your GitHub org/user name.
+    projectName: "causadb-docs", // Usually your repo name.
 
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
@@ -162,6 +163,7 @@ const config = {
                 darkTheme: prismThemes.dracula,
             },
         }),
+    plugins: [lunrSearch],
 };
 
 export default config;
