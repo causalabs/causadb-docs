@@ -59,6 +59,20 @@ h1, h2, h3, h4, h5, body, .navbar__title {
     font-family: 'DM Sans', sans-serif;
 }
 
+body {
+    font-size: 1.05rem;
+}
+
+.table-of-contents {
+    font-size: 1.05rem;
+}
+
+/* body {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+} */
+
 .navbar__title {
     font-size: 1.5rem;
     font-weight: 700;

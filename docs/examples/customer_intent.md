@@ -32,7 +32,7 @@ For this example we'll use a synthetic dataset that looks something like this:
 
 Each row corresponds to a customer in the customer interaction database, and their browsing and purchasing behaviour, along with whether they were offered a discount. This is the dataset we'll be using to train our causal model.
 
-## Setup
+## Set up CausaDB
 
 CausaDB can be initialised and the dataset can be attached in the usual way:
 
@@ -42,12 +42,17 @@ const causadb = require('causadb');
 causadb.setToken("<YOUR_API_KEY>");
 
 const model = causadb.createModel("customer_intent");
+
+model.attachDataFromDB("customer_intent_db");
 ```
+
+If you don't already have an API key, [get in touch](https://causa.tech) to set one up.
+
 ## Fitting the causal model
 
-Once we have initialised CausaDB and created our model instance, the next step is to define the causal model with the relevant variables and their relationships. This means specifying the input features and the causal relationships between them. We'll define these manually in this example, but there are more automated approaches that we explore in other examples.
+Once we have initialised CausaDB and created our model instance, the next step is to define the causal model with the relevant variables and their relationships. This means specifying the input features and the causal relationships between them. We'll define these manually in this example, but there are also automated and semi-automated approaches that we explore in other examples. This only needs to be done once when first setting up the model or when updating it.
 
-### Defining the Causal Relationships
+### Defining the causal relationships
 
 The causal model in CausaDB allows us to incorporate domain knowledge about potential causal relationships between variables. In our case, we have:
 
@@ -82,7 +87,7 @@ With the train method, the model learns from the historical data in our dataset.
 
 ## Using the model in production
 
-CausaDB is cloud-first, so once training is complete, the model is already available in production. This means that from a NodeJS server that handles API calls from your frontend, you can simply connect to CausaDB as above, retrieve the model, and then run the query needed for your application. In this case we'll retrieve the model using:
+CausaDB is cloud-first, so once training is complete, the model is already available in production. This means that from a NodeJS server that handles API calls from your frontend, you can simply connect to CausaDB as we did earlier, retrieve the model, and then run the query needed for your application. In this case we'll retrieve the model using:
 
 ```js
 const model = CausaDB.getModel("customer_intent");
