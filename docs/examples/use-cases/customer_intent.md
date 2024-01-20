@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Predicting customer intent
+# Understanding customer intent
 
 In the competitive retail landscape, understanding customer intent and optimising discount strategies can have a large impact on profitability. This use case explores how CausaDB can be used to predict whether or not to offer a discount to a specific user, based on their viewing and buying history.
 

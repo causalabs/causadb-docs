@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Recommending health and lifestyle changes
+# Recommending health and lifestyle interventions
 
 The availability of big data and the advancement of machine learning technologies has promised a revolution in personalised healthcare. ML and AI technologies could help to personalise treatments and recommendations to a person's specific needs. This technology has started to be used in both clinical and non-clinical settings, with popular apps helping people to manage their nutrition in a way that is tailor-made to their own needs. However a major limitation of these technologies is that they are rarely built using causally-aware algorithms. This makes it easy for AI algorithms to give poor and even potentially harmful recommendations. In this use case we'll explore how conventional AI gets this wrong, and how causal AI can be used to give trustworthy lifestyle recommendations.
 
