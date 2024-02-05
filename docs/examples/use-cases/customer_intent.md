@@ -70,7 +70,6 @@ model.setEdges([
     ("ViewedSimilarItem", "OfferedDiscount"),
     ("BoughtSimilarItem", "OfferedDiscount"),
     ("BoughtSimilarItem", "BoughtItem"),
-    ("BoughtSimilarItem", "OfferedDiscount"),
     ("OfferedDiscount", "BoughtItem")
 ]);
 ```
