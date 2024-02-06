@@ -164,6 +164,7 @@ const config = {
             },
         }),
     plugins: [lunrSearch],
+    themes: ["docusaurus-theme-openapi-docs"],
 };
 
 export default config;
