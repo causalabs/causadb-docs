@@ -23,6 +23,19 @@ jobs:
 
             - name: Install dependencies
               run: yarn install --frozen-lockfile
+
+            # Checkout the `doc-pages` branch of `causadb-server` repository.
+            - name: Checkout API repository
+              uses: actions/checkout@v3
+              with:
+                  repository: causadb/causadb-server
+                  ref: doc-pages
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  path: ./causadb-server
+
+            - name: Move API docs to website
+              run: cp -r ./causadb-server ./docs/reference/api
+
             - name: Build website
               run: yarn build
 
