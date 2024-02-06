@@ -34,8 +34,9 @@ jobs:
                   token: ${{ secrets.CAUSALABS_PAT }}
                   path: ./causadb-server-docs
 
+            # Copy contents of causadb-server-docs to the ./docs/reference/api directory
             - name: Move API docs to site
-              run: cp -r ./causadb-server-docs ./docs/reference/api
+              run: cp -r ./causadb-server-docs/* ./docs/reference/api/
 
             - name: Build site
               run: yarn build
