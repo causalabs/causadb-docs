@@ -30,6 +30,9 @@ jobs:
               uses: actions/checkout@v3
               with:
                   repository: causalabs/causadb-server
+                  ref: doc-pages
+                  token: ${{ secrets.CAUSALABS_PAT }}
+                  path: ./causadb-server
 
             - name: Move API docs to website
               run: cp -r ./causadb-server ./docs/reference/api
