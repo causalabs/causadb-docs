@@ -31,7 +31,7 @@ jobs:
               with:
                   repository: causalabs/causadb-server
                   ref: doc-pages
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  #   token: ${{ secrets.GITHUB_TOKEN }}
                   path: ./causadb-server
 
             - name: Move API docs to website
