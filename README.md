@@ -2,6 +2,10 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+## Deployment
+
+The docs are deployed to AWS Amplify. The deployment is triggered by pushing to the `main` branch. The deployment process is automated and the website is updated automatically. Documentation from the API server and various clients is aggregated in the Github actions workflow. This is scheduled to run every 24 hours at 00:00 UTC, but can also be triggered manually.
+
 ### Installation
 
 ```
