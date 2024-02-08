@@ -48,6 +48,10 @@ jobs:
                   token: ${{ secrets.CAUSALABS_PAT }}
                   path: ./causadb-python-docs
 
+            # Copy contents of causadb-python-docs to the ./docs/reference/python directory
+            - name: Move Python docs to site
+              run: cp -r ./causadb-python-docs/* ./docs/reference/python/
+
             - name: Build site
               run: yarn build
 
