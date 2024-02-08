@@ -39,6 +39,15 @@ jobs:
             - name: Move API docs to site
               run: cp -r ./causadb-server-docs/* ./docs/reference/api/
 
+            # Pull the latest doc pages from the causadb-python repository
+            - name: Checkout causadb-python repository
+              uses: actions/checkout@v3
+              with:
+                  repository: causalabs/causadb-python
+                  ref: docs
+                  token: ${{ secrets.CAUSALABS_PAT }}
+                  path: ./causadb-python-docs
+
             - name: Build site
               run: yarn build
 
