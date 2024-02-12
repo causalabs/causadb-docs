@@ -52,17 +52,17 @@ jobs:
             - name: Move Python docs to site
               run: cp -r ./causadb-python-docs/* ./docs/reference/python/
 
-            # Pull the latest doc pages from the causadb-node repository
-            - name: Checkout causadb-node repository
-              uses: actions/checkout@v3
-              with:
-                  repository: causalabs/causadb-node
-                  ref: docs
-                  token: ${{ secrets.CAUSALABS_PAT }}
-                  path: ./causadb-node-docs
+            # # Pull the latest doc pages from the causadb-node repository
+            # - name: Checkout causadb-node repository
+            #   uses: actions/checkout@v3
+            #   with:
+            #       repository: causalabs/causadb-node
+            #       ref: docs
+            #       token: ${{ secrets.CAUSALABS_PAT }}
+            #       path: ./causadb-node-docs
 
-            - name: Move Node docs to site
-              run: cp -r ./causadb-node-docs/* ./docs/reference/node/
+            # - name: Move Node docs to site
+            #   run: cp -r ./causadb-node-docs/* ./docs/reference/node/
 
             - name: Build site
               run: yarn build
