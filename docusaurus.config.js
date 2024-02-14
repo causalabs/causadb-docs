@@ -110,7 +110,7 @@ const config = {
                     },
                     // { to: "/blog", label: "Blog", position: "right" },
                     // {
-                    //     href: "https://github.com/facebook/docusaurus",
+                    //     href: "https://github.com/causalabs",
                     //     label: "GitHub",
                     //     position: "right",
                     // },
@@ -118,45 +118,7 @@ const config = {
             },
             footer: {
                 style: "light",
-                // links: [
-                //     {
-                //         title: "Docs",
-                //         items: [
-                //             {
-                //                 label: "Tutorial",
-                //                 to: "/docs/guide/intro",
-                //             },
-                //         ],
-                //     },
-                //     {
-                //         title: "Community",
-                //         items: [
-                //             {
-                //                 label: "Slack",
-                //                 href: "https://discordapp.com/invite/docusaurus",
-                //             },
-                //             {
-                //                 label: "X",
-                //                 href: "https://twitter.com/docusaurus",
-                //             },
-                //         ],
-                //     },
-                //     {
-                //         title: "More",
-                //         items: [
-                //             {
-                //                 label: "Blog",
-                //                 to: "/blog",
-                //             },
-                //             {
-                //                 label: "GitHub",
-                //                 href: "https://github.com/facebook/docusaurus",
-                //             },
-                //         ],
-                //     },
-                // ],
-
-                copyright: `Copyright © ${new Date().getFullYear()} Causa Ltd.`,
+                copyright: `Copyright © ${new Date().getFullYear()} Causa Ltd.<br />Last built: ${new Date().toUTCString()}`,
             },
             prism: {
                 theme: prismThemes.dracula,
