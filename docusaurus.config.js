@@ -51,6 +51,13 @@ const config = {
                 theme: {
                     customCss: "./src/css/custom.css",
                 },
+                blog: {
+                    path: "updates",
+                    routeBasePath: "updates",
+                    blogSidebarTitle: "All Updates",
+                    blogTitle: "Updates",
+                    blogDescription: "CausaDB updates.",
+                },
             }),
         ],
     ],
@@ -108,12 +115,12 @@ const config = {
                         label: "Status",
                         position: "right",
                     },
-                    // { to: "/blog", label: "Blog", position: "right" },
-                    // {
-                    //     href: "https://github.com/causalabs",
-                    //     label: "GitHub",
-                    //     position: "right",
-                    // },
+                    { to: "/updates", label: "Updates", position: "right" },
+                    {
+                        href: "https://github.com/causalabs",
+                        label: "GitHub",
+                        position: "right",
+                    },
                 ],
             },
             footer: {
