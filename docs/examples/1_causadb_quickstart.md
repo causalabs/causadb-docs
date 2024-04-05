@@ -8,7 +8,7 @@ position: 1
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1k3UD2B0hQbqljOBi91TlWPD4Xmtz5PNP?usp=sharing)
 
-This is a simple notebook to help you get started with CausaDB in Python. For more information, visit the [CausaDB docs](docs.causadb.com). In this notebook we'll give a broad overview and whistle-stop tour of some of the core features of CausaDB. This notebook isn't intended to be a full guide. For that, please refer to the documentation.
+This is a simple notebook to help you get started with CausaDB in Python. For more information, visit the [CausaDB docs](https://docs.causadb.com). In this notebook we'll give a broad overview and whistle-stop tour of some of the core features of CausaDB. This notebook isn't intended to be a full guide. For that, please refer to the documentation.
 
 ## Initialise a client
 
