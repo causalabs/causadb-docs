@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.causadb.com/updates</id>
+    <title>CausaDB Docs Blog</title>
+    <updated>2024-04-05T15:59:37.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.causadb.com/updates"/>
+    <subtitle>CausaDB Docs Blog</subtitle>
+    <icon>https://docs.causadb.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[March 2024]]></title>
+        <id>https://docs.causadb.com/updates/march-2024</id>
+        <link href="https://docs.causadb.com/updates/march-2024"/>
+        <updated>2024-04-05T15:59:37.000Z</updated>
+        <summary type="html"><![CDATA[March has been a busy month for the CausaDB team. We've been working hard to bring you the latest updates and improvements to the platform. Here's a summary of what's new in CausaDB this month.]]></summary>
+        <content type="html"><![CDATA[<p>March has been a busy month for the CausaDB team. We've been working hard to bring you the latest updates and improvements to the platform. Here's a summary of what's new in CausaDB this month.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="https://docs.causadb.com/updates/march-2024#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features">​</a></h2>
+<ul>
+<li>Major core functionality updates with improved speed and performance.</li>
+<li>Support for <code>fixed</code> argument in <code>find_best_actions</code>.</li>
+<li>Support for both continuous and binary data types.</li>
+<li>Support for pandas data loading.</li>
+<li>Improved containerisation for easier self-hosting.</li>
+<li>Added smart building heating example to documentation.</li>
+<li>Added updates blog (what you're reading right now!) to documentation site.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="improvements">Improvements<a href="https://docs.causadb.com/updates/march-2024#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements">​</a></h2>
+<ul>
+<li>Various improvements to user experience including renaming of functions and arguments.</li>
+<li>Improved documentation and examples.</li>
+<li>Improved error handling for invalid user inputs.</li>
+<li>Atomic artefact management for robust porting of models between versions.</li>
+<li>Various polishing and improvements to documentation site.</li>
+</ul>]]></content>
+    </entry>
+</feed>
