@@ -7,7 +7,7 @@ position: 2
 
 We've made some of our examples available as Google Colab notebooks. These notebooks are a great way to get started with CausaDB and see how it can be used to solve real-world problems.
 
-You'll need an API key to get started, which you can get by sending an email to [info@causa.tech](mailto:info@causa.tech).
+You'll need an API key to get started, which you can get by sending an email to [causadb@causa.tech](mailto:causadb@causa.tech).
 
 ## Examples
 

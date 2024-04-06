@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # Installation
 
+:::tip
+
+Just want to get started without setting up your own environment? Try our [Google Colab notebooks](../examples/colab_notebooks) to get started with CausaDB in the cloud.
+
+:::
+
 ## CLI/Python interface
 
 CausaDB is managed through a CLI tool that can be installed through pip. We also provide Python, Node.js, and REST API interfaces. The CLI tool is bundled with the Python interface, so should be installed regardless of whether you want to use the Python interface. 
