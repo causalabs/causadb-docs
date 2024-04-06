@@ -51,6 +51,19 @@ jobs:
             - name: Move Python docs to site
               run: cp -r ./causadb-python-docs/* ./docs/reference/python/
 
+            # Pull the latest cli-docs from the causadb-python repository
+            - name: Checkout causadb-cli repository
+              uses: actions/checkout@v3
+              with:
+                  repository: causalabs/causadb-python
+                  ref: cli-docs
+                  token: ${{ secrets.CAUSALABS_PAT }}
+                  path: ./causadb-cli-docs
+
+            # Copy contents of causadb-cli-docs to the ./docs/reference/cli directory
+            - name: Move CLI docs to site
+              run: cp -r ./causadb-cli-docs/* ./docs/reference/cli/
+
             # # Pull the latest doc pages from the causadb-node repository
             # - name: Checkout causadb-node repository
             #   uses: actions/checkout@v3
