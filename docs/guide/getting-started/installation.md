@@ -36,6 +36,12 @@ client = causadb.CausaDB(token="<YOUR_TOKEN_HERE>")
 
 ## Node.js interface
 
+:::warning
+
+The Node.js interface is under active development and is not yet feature-complete. We recommend using the Python interface for now.
+
+:::
+
 The Node.js client is intended for use with JavaScript and Typescript, and is ideal for server-side (not client-side) software.
 
 ### Installing the Node.js interface
