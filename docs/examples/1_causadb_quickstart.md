@@ -92,7 +92,7 @@ Once the model is defined, we can train it on the data we've loaded. This will l
 model.train("quickstart-heating-data")
 ```
 
-## Query: simulating actions
+## Simulating actions
 
 One of the common use cases for a causal model is to simulate the effect of actions. We can do this by setting the value of a variable to a specific value, and then seeing how the other variables change. This is useful for understanding the impact of interventions, or for making predictions.
 
@@ -127,7 +127,7 @@ model.simulate_actions(actions={
 | 0 | 0.0 | 12.0         | 46.0    | 15.687185   | 593.513125  |
 
 
-## Query: Finding the best action to take
+## Finding the best action(s) to take
 
 Probably the most common use case is to find the best action to take. This could be a decision, an optimisation, or a recommendation. We can do this using the `find_best_action` method, which will find the action that achieves an outcome closest to a target value. This can be done while respecting constraints on other variables, or by setting the value of other variables to specific values using the `fixed` parameter.
 
@@ -150,7 +150,7 @@ Best heating setting: 54.3
 Indoor temperature achieved: 19.0°C
 ```
 
-## Query: Finding the causal effects of a variable
+## Finding the causal effects of a variable
 
 Another useful query is to find the causal effect of a variable on the others. This can be done using the `causal_effect` method, which will return the expected change in the target variable for a given change in the causal variable. This can be done for a range of values, or for a single value.
 
@@ -166,7 +166,7 @@ model.causal_effects({"heating": [50, 55]}, fixed={"outdoor_temp": 15})
 | indoor_temp   | 1.295403 | 1.135942 | 1.454892 |
 | energy        | 43.059056| 40.899418| 45.263778|
 
-## Query: Causal attribution
+## Attributing causes of an outcome
 
 A similar but distinct query to `causal_effects` is `causal_attributions`, which calculates how much each variable contributes to the value of an outcome variable. This can be useful for understanding the importance of different variables in a system. It's important to interpret these results in the context of the model, as the causal pathways can sometimes be indirect.
 

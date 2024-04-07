@@ -117,9 +117,16 @@ const config = {
                     },
                     { to: "/updates", label: "Updates", position: "right" },
                     {
-                        href: "https://github.com/causalabs",
-                        label: "GitHub",
+                        href: "https://your-slack-community-link",
+                        "aria-label": "Slack",
                         position: "right",
+                        className: "header-slack-link",
+                    },
+                    {
+                        href: "https://github.com/causalabs",
+                        "aria-label": "GitHub repository",
+                        position: "right",
+                        className: "header-github-link",
                     },
                 ],
             },
