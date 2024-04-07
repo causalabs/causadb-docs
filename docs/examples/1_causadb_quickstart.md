@@ -204,4 +204,4 @@ It's interesting to note that indoor temperature has a small effect on energy us
 
 ## Conclusion
 
-This has been a quick overview of some of the core features of CausaDB. For more information, please refer to the documentation or get in touch with us.
+This has been a quick overview of some of the core features of CausaDB. For more information, please refer to the documentation or get in touch with us via email: [causadb@causa.tech](mailto:causadb@causa.tech) or our [Slack community](https://join.slack.com/t/causadbcommunity/shared_invite/zt-2gahl1s0j-gsAf9ZJsR0SKcAZe3AVBIQ).

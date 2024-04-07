@@ -24,4 +24,4 @@ We built CausaDB to solve this problem. CausaDB handles model development workfl
 
 ## Want to get started?
 
-To get started with CausaDB, [get in touch](https://causa.tech) with our team to receive access credentials. If you already have your access credentials, follow the [installation instructions](./installation) in this documentation site.
+To get started with CausaDB, get in touch with our team via email: [causadb@causa.tech](mailto:causadb@causa.tech) or through our [Slack community](https://join.slack.com/t/causadbcommunity/shared_invite/zt-2gahl1s0j-gsAf9ZJsR0SKcAZe3AVBIQ). If you already have your access credentials, follow the [installation instructions](./installation) in this documentation site.
