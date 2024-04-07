@@ -12,26 +12,22 @@ This is a simple notebook to help you get started with CausaDB in Python. For mo
 
 ## Initialise a client
 
-Before you can use CausaDB, you need to create a client. You can do this by providing your API key provided by us. We'll load from Google colab secrets in this example, but in production the token could be loaded from environment variables or a secret manager.
-
-In Colab you'll need to set the `CAUSADB_TOKEN` environment variable to the token provided to you, and make sure the notebook has access to it. You can do this using the toolbar on the left hand side.
+Before you can use CausaDB, you need to create a client. You can do this by providing your token key. We'll load from Google colab secrets in this example, but in production the token could be loaded from environment variables or a secret manager. In this example you can replace `<YOUR_TOKEN>` with your token.
 
 
 ```python
 from causadb import CausaDB
 from causadb.plotting import plot_causal_graph, plot_causal_attributions
-import os
 import numpy as np
-from google.colab import userdata
 
-client = CausaDB(token=userdata.get("CAUSADB_TOKEN"))
+client = CausaDB(token="<YOUR_TOKEN>")
 ```
 
 ## Registering a data source
 
 CausaDB works by first registering data with the cloud service, and then attaching it to your model. Data can be loaded from a live database or a file. Loading from a database is preferred because it avoids duplication and keeps a single source of truth, but sometimes it will be necessary to load from a local file like a `.csv` or `.xlsx`, or even a Python `pandas` dataframe.
 
-In this example we'll show how to load data from a pandas dataframe. The data we'll use are one of the built-in example datasets that are included in the CausaDB Python library.
+In this example we'll show how to load data from a pandas dataframe. The data we'll use are from one of the built-in example datasets that are included in the CausaDB Python library.
 
 
 ```python
@@ -172,7 +168,7 @@ model.causal_effects({"heating": [50, 55]}, fixed={"outdoor_temp": 15})
 
 ## Query: Causal attribution
 
-A similar but distinct query to `causal_effects` is `causal_attributions`, which calculates how much each variable contributes to the value of an outcome variable. This can be useful for understanding the importance of different variables in a system. It's important to interpret these results in the context of the model, as they causal pathways can sometimes be indirect.
+A similar but distinct query to `causal_effects` is `causal_attributions`, which calculates how much each variable contributes to the value of an outcome variable. This can be useful for understanding the importance of different variables in a system. It's important to interpret these results in the context of the model, as the causal pathways can sometimes be indirect.
 
 
 ```python
@@ -187,8 +183,7 @@ causal_attributions
 | indoor_temp   | 2.948999  |
 
 
-Causal attributions can also be plotted to visualise the impacts of various variables on the outcome.
-
+Causal attributions can also be plotted to visualise the impacts of various variables on the outcome. Positive-valued attributions mean that greater values of the cause node will positively affect the outcome node, and negative-valued attributions mean that greater values of the cause node will negatively affect the outcome node.
 
 ```python
 plot_causal_attributions(model, "energy", normalise=False)
@@ -205,7 +200,7 @@ plot_causal_attributions(model, "energy", normalise=True)
     
 ![png](causadb_quickstart_files/causadb_quickstart_24_1.png)
     
-
+It's interesting to note that indoor temperature has a small effect on energy usage. This is because refrigeration units will work harder to maintain a lower temperature, and heating units will work harder to maintain a higher temperature. This is a good example of how causal models can capture these complex relationships.
 
 ## Conclusion
 

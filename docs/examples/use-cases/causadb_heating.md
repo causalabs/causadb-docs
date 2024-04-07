@@ -290,25 +290,35 @@ With the CausaDB model trained, then we can use it to generate recommendations f
 
 
 ```python
+current_outdoor_temp = 16
+
 best_actions = model.find_best_actions(
-    targets={"indoor_temp": 19},
+    targets={"indoor_temp": target_indoor_temp},
     actionable=["heating"],
-    fixed={"outdoor_temp": 16}
+    fixed={"outdoor_temp": current_outdoor_temp}
 )
 
-achieved_indoor_temp = set_heating(best_actions["heating"].values, np.array([16]), noise=False)[0]
+best_actions
+```
+
+|       | heating   |
+|-------|-----------|
+| 0     | 50.154196 |
+
+We can then use the recommended best actions with the set_heating function from our example data generator to see what happens when we take actions in the "real" world.
+
+```python
+achieved_indoor_temp = set_heating(best_actions["heating"].values, np.array([current_outdoor_temp]), noise=False)[0]
 
 print(f"Best heating setting: {best_actions['heating'].values[0]:.2f}")
 print(f"Indoor temperature achieved: {achieved_indoor_temp[0]:.2f}°C")
-
+```
+```
+Best heating setting: 50.15
+Indoor temperature achieved: 17.94°C
 ```
 
-```
-Best heating setting: 53.88
-Indoor temperature achieved: 18.87°C
-```
-
-Now we'll compare the recommendations made by the CausaDB model with the XGBoost model, and see how well the two approaches perform in the real world on the test year.
+Now we'll compare the recommendations made by the CausaDB model with the XGBoost model, and see how well the two approaches perform in the real world over the test year.
 
 
 ```python

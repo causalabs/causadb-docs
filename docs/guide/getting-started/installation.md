@@ -16,6 +16,12 @@ CausaDB is managed through a CLI tool that can be installed through pip. We also
 
 ### Installing the CLI/Python interface
 
+:::tip
+
+Using Conda? We recommend using the `pip` package manager to install the CLI and Python interface. You can install pip in Conda using `conda install pip`.
+
+:::
+
 The CLI (and bundled Python interface) can be installed from PyPI using:
 
 ```bash
@@ -44,7 +50,7 @@ client = causadb.CausaDB(token="<YOUR_TOKEN_HERE>")
 
 :::warning
 
-The Node.js interface is under active development and is not yet feature-complete. We recommend using the Python interface for now.
+The Node.js interface is under active development and is not yet feature-complete. Do not use this interface unless you are a developer or beta tester.
 
 :::
 
