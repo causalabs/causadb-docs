@@ -9,7 +9,7 @@ Causal AI models are built around causal graphs, which represent the potential r
 <!-- Image of a causal graph -->
 ![Causal Graph](causadb_quickstart_8_0.png)
 
-One of the most important properties of causal graphs is that they are acyclic, meaning that there are no loops in the graph. This is because a causal relationship between two variables implies a temporal ordering, where the cause must precede the effect, so a loop would imply causality acting backwards in time. See the section below on time series for more information on how to handle time series data.
+One key property of causal graphs is that they are acyclic, meaning that there are no loops in the graph. This is because a causal relationship between two variables implies a temporal ordering, where the cause must precede the effect, so a loop would imply causality acting backwards in time. If you feel that you need a loop in your graph, then you have a time series, and should see the relevant section below more information on how to handle time series data.
 
 The strongest assumptions when building a causal graph are the missing edges. These are the edges that are not present in the graph, and represent the assumption that there is no direct causal relationship between the variables. This means that the AI model won't attempt to learn a relationship between these variables.
 
