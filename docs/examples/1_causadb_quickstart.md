@@ -102,7 +102,7 @@ model.train("quickstart-heating-data")
 
 One of the common use cases unique to causal models is to simulate the effect of actions to see how they change the outcome. We can do this by setting the value of a variable to a specific value, and then seeing how the other variables change. This is useful for understanding the impact of actions/decisions/interventions, or for making predictions.
 
-CausaDB is fully Bayesian, so we can easily access the lower and upper bounds of the predictions as well as the expected value, using the `lower`, `upper`, and `median` keys.
+CausaDB is fully Bayesian. This has the advantage of allowing easily access the lower and upper bounds of the predictions as well as the expected (average) value, using the `lower`, `upper`, and `median` keys.
 
 
 ```python
@@ -174,7 +174,7 @@ model.causal_effects({"heating": [50, 55]}, fixed={"outdoor_temp": 15})
 
 ## Attributing causes of an outcome
 
-A similar but distinct query to `causal_effects` is `causal_attributions`, which calculates how much each variable contributes to the value of an outcome variable. This can be useful for understanding the importance of different variables in a system. It's important to interpret these results in the context of the model, as the causal pathways can sometimes be indirect.
+A similar but distinct query to `causal_effects` is `causal_attributions`, which calculates how much each variable contributes to the value of an outcome variable. This can be useful for understanding the importance of different variables in a system. It's important to interpret these results in the context of the model, as the causal pathways can sometimes be indirect (through another variable).
 
 
 ```python
