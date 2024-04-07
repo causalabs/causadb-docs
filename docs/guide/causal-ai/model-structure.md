@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # Model Structure
 
+Check out the video below for a quick overview of defining causal graphs.
+
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', height: 'auto', margin: 'auto'}}>
+    <iframe src="https://www.youtube.com/embed/VLLKnVWDpQo?si=1S8zR6YxlH1oiLhW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+</div>
+
 Causal AI models are built around causal graphs, which represent the potential relationships between variables in a system. In causal graphs, nodes represent variables, and edges represent potential causal relationships between variables. These relationships are directed, meaning that the arrow points from the cause to the effect. A simple causal graph might look something like this:
 
 <!-- Image of a causal graph -->
@@ -13,11 +19,17 @@ One key property of causal graphs is that they are acyclic, meaning that there a
 
 The strongest assumptions when building a causal graph are the missing edges. These are the edges that are not present in the graph, and represent the assumption that there is no direct causal relationship between the variables. This means that the AI model won't attempt to learn a relationship between these variables.
 
-Causal AI removes the limitations of standard AI here. Standard AI assumes a causal graph where all the variables cause the outcome only. In causal AI we relax this assumption and allow the AI learn how other variables to cause each other too. An arrow does not mean that you are forcing there to be a causal effect, it means that you are allowing the model to learn the extent (if any) of the causal effect between the variables. This means that the AI is able to learn a world representation that works when it's deployed in the real world.
+If you add an edge then you're enabling the AI to learn a relationship betweeen those variables. Causal AI removes the limitations of standard AI. Standard AI assumes a causal graph where all the variables cause the outcome only. In causal AI we relax this assumption and allow the AI learn how other variables to cause each other too. An arrow does not mean that you are forcing there to be a causal effect, it means that you are allowing the model to learn the extent (if any) of the causal effect between the variables. This means that the AI is able to learn a world representation that works when it's deployed in the real world.
 
 ## Defining a Causal Graph
 
-When building a causal AI model, the first step is to define the nodes and edges of the causal graph. This can be done manually by specifying the nodes and edges in code, or by using a graphical interface to build the graph visually. Our model builder tool allows you to drag and drop nodes and edges to define the structure of your model, and then export the model to code for training and querying: [CausaDB Model Builder](https://builder.causadb.com). You can get a long way creating these graphs with just common sense alone, and that often gets you much better results than standard AI. Causal AI also has the benefit that if you are using the AI for health or safety critical systems, you can also get experts to help define the causal graph.
+When building a causal AI model, the first step is to define the nodes and edges of the causal graph. This can be done manually by specifying the nodes and edges in code, or by using a graphical interface to build the graph visually. Our model builder tool allows you to drag and drop nodes and edges (arrows) to define the structure of your model, and then export the model to code for training and querying: [CausaDB Model Builder](https://builder.causadb.com).\
+
+Check out the video below for a quick overview of defining causal graphs.
+
+<div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', height: 'auto', margin: 'auto'}}>
+    <iframe src="https://www.youtube.com/watch?v=Ik_e52Sq51w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+</div>
 
 ## Learning a Causal Graph from Data
 
