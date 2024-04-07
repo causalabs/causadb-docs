@@ -54,6 +54,12 @@ data.head()
 
 The code below creates a causal model and defines its causal structure. This can be done through code, as below, or through our [BETA model builder web interface](https://builder.causadb.com).
 
+:::tip
+
+For information on defining the causal structure structure see [Model Structure Concepts](../../guide/causal-ai/model-structure)
+
+:::
+
 
 ```python
 # Define a causal model (can also be done in the UI)
