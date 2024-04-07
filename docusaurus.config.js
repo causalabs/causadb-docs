@@ -117,7 +117,7 @@ const config = {
                     },
                     { to: "/updates", label: "Updates", position: "right" },
                     {
-                        href: "https://your-slack-community-link",
+                        href: "https://join.slack.com/t/causadbcommunity/shared_invite/zt-2gahl1s0j-gsAf9ZJsR0SKcAZe3AVBIQ",
                         "aria-label": "Slack",
                         position: "right",
                         className: "header-slack-link",
