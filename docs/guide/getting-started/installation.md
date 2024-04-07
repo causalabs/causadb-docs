@@ -6,7 +6,7 @@ sidebar_position: 2
 
 :::tip
 
-Just want to get started without setting up your own environment? Try our [Google Colab notebooks](../examples/colab_notebooks) to get started with CausaDB in the cloud.
+Just want to get started without setting up your own environment? Try our [Google Colab notebooks](../../examples/colab_notebooks) to get started with CausaDB in the cloud.
 
 :::
 
