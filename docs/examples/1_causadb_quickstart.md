@@ -91,7 +91,7 @@ plot_causal_graph(model)
 
 ## Training a causal model
 
-Once the model is defined, we can train it on the data we've loaded. This will learn the causal relationships according to the structure defined above. This model will then be ready to query.
+Now we can train the model on the loaded data. This will learn the causal relationships according to the structure defined above. This model will then be ready to query.
 
 
 ```python
@@ -100,7 +100,7 @@ model.train("quickstart-heating-data")
 
 ## Simulating actions
 
-One of the common use cases for a causal model is to simulate the effect of actions. We can do this by setting the value of a variable to a specific value, and then seeing how the other variables change. This is useful for understanding the impact of interventions, or for making predictions.
+One of the common use cases unique to causal models is to simulate the effect of actions to see how they change the outcome. We can do this by setting the value of a variable to a specific value, and then seeing how the other variables change. This is useful for understanding the impact of actions/decisions/interventions, or for making predictions.
 
 CausaDB is fully Bayesian, so we can easily access the lower and upper bounds of the predictions as well as the expected value, using the `lower`, `upper`, and `median` keys.
 
