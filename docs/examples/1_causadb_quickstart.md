@@ -56,7 +56,7 @@ The code below creates a causal model and defines its causal structure. This can
 
 :::tip
 
-For information on defining the causal structure structure see [Model Structure Concepts](../../guide/causal-ai/model-structure.md)
+For information on defining the causal structure structure see [Model Structure Concepts](../../guide/causal-ai/model-structure)
 
 :::
 
