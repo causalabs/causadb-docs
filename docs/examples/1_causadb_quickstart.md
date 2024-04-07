@@ -52,7 +52,7 @@ data.head()
 
 ## Defining a causal model
 
-The code below creates a causal model and defines its causal structure. This can be done through code, as below, or through our [BETA model builder web interface](https://builder.causadb.com).
+The code below creates a causal model and defines its causal structure. This can be done through code, as below, or through our [BETA model builder web interface](https://builder.causadb.com). In the first two lines of set_edges, for example, we're saying that the outdoor temperature might effect both the indoor temperature and the heating setting. This allows the model to learn any relationship between those variables when it is trained.
 
 :::tip
 
