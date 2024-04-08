@@ -23,7 +23,7 @@ If you add an edge then you're enabling the AI to learn a relationship betweeen 
 
 ## Defining a Causal Graph
 
-When building a causal AI model, the first step is to define the nodes and edges of the causal graph. This can be done manually by specifying the nodes and edges in code, or by using a graphical interface to build the graph visually. Our model builder tool allows you to drag and drop nodes and edges (arrows) to define the structure of your model, and then export the model to code for training and querying: [CausaDB Model Builder](https://builder.causadb.com).\
+When building a causal AI model, the first step is to define the nodes and edges of the causal graph. This can be done manually by specifying the nodes and edges in code, or by using a graphical interface to build the graph visually. Our model builder tool allows you to drag and drop nodes and edges (arrows) to define the structure of your model, and then export the model to code for training and querying: [CausaDB Model Builder](https://builder.causadb.com).
 
 Check out the video below for a quick overview of defining causal graphs.
 
