@@ -7,7 +7,7 @@ sidebar_position: 2
 Check out the video below for a quick overview of defining causal graphs.
 
 <div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', height: 'auto', margin: 'auto'}}>
-    <iframe src="https://www.youtube.com/embed/VLLKnVWDpQo?si=1S8zR6YxlH1oiLhW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+    <iframe src="https://youtu.be/Ik_e52Sq51w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
 Causal AI models are built around causal graphs, which represent the potential relationships between variables in a system. In causal graphs, nodes represent variables, and edges represent potential causal relationships between variables. These relationships are directed, meaning that the arrow points from the cause to the effect. A simple causal graph might look something like this:
