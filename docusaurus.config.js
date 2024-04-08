@@ -72,7 +72,7 @@ const config = {
             announcementBar: {
                 id: "supportus",
                 content:
-                    "🛠️ Documentation site is under active development and changes on a daily basis.",
+                    "🛠️ Documentation site is under active development. If you have any feedback, please email us or join our Slack community.",
                 backgroundColor: "#009489",
                 textColor: "#fff",
                 isCloseable: false,
