@@ -1,6 +1,6 @@
 ---
 title: Building Energy Optimisation
-description: A quickstart guide to using CausaDB in Python
+description: Using CausaDB to optimise pre-heating and pre-cooling strategies in commercial buildings
 ---
 
 # Smart Building Energy Optimisation
