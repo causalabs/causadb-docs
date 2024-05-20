@@ -27,7 +27,7 @@ We won't go into the details of setting up CausaDB in this example. If you haven
 We'll be using a simulated dataset for this example. The dataset contains the following columns:
 
 * `Input_A`, `Input_B`, `Input_C`: The input materials for the production line, this could be raw stock, chemicals, or components coming into the production line from another source.
-* `Config_*`: Configuration settings for the production line, these could be things like temperature, pressure, or speed settings for each machine at different points along the production line.
+* `Setting_*`: Configuration settings for the production line, these could be things like temperature, pressure, or speed settings for each machine at different points along the production line.
 * `Yield_*`: The yield of the production line at different points, this could be the proportion of good products to bad products, or the proportion of raw materials that are lost as waste.
 * `Output`: The final output of the production line, again, this could be the proportion of good products to bad products, or the proportion of raw materials that are lost as waste.
 
@@ -36,7 +36,7 @@ data = pd.read_csv('production_data.csv')
 data.head()
 ```
 
-|    |   Input_A |   Input_B |   Input_C |   Config_A1 |   Config_B1 |   Config_B2 |   Config_C1 |   Config_C2 |   Yield_A1 | Config_A2 |Yield_B1 |   Config_B3 |   Yield_A2 |   Config_A3 |   Yield_B2 |   Yield_C1 |   Yield_A3 |   Yield_B3 |   Yield_C2 |   Output |
+|    |   Input_A |   Input_B |   Input_C |   Setting_A1 |   Setting_B1 |   Setting_B2 |   Setting_C1 |   Setting_C2 |   Yield_A1 | Setting_A2 |Yield_B1 |   Setting_B3 |   Yield_A2 |   Setting_A3 |   Yield_B2 |   Yield_C1 |   Yield_A3 |   Yield_B3 |   Yield_C2 |   Output |
 |---:|----------:|----------:|----------:|------------:|------------:|------------:|------------:|------------:|-----------:|------------:|-----------:|------------:|-----------:|------------:|-----------:|-----------:|-----------:|-----------:|-----------:|---------:|
 |  0 |     62.21 |     91.48 |     72.55 |        0.34 |        0.42 |        0.39 |        0.52 |        0.87 |       0.64 |        0.54 |       0.52 |        0.51 |       0.62 |        0.62 |       0.53 |       0.38 |       0.6  |       0.63 |       0.68 |     0.88 |
 |  1 |     74    |    124.91 |     75.04 |        0.65 |        0.34 |        0.35 |        0.27 |        0.63 |       0.54 |        0.74 |       0.47 |        0.54 |       0.73 |        0.69 |       0.45 |       0.2  |       0.75 |       0.57 |       0.41 |     0.85 |
@@ -72,7 +72,7 @@ plot_causal_graph(model, style="flowchart", theme="dark", direction="LR")
 
 ![Production Line Causal Graph](production_lines_optimisation_files/causal_diagram.png)
 
-Here we can see the causal relationships between different variables in the production line. The `Config_*` nodes are the configuration settings for the machines and processes in the production line. These settings are modifiable and can be used to optimise the production line for maximum yield.
+Here we can see the causal relationships between different variables in the production line. The `Setting_*` nodes are the configuration settings for the machines and processes in the production line. These settings are modifiable and can be used to optimise the production line for maximum yield.
 
 ## Find optimal machine configurations to maximise yield
 
@@ -81,7 +81,7 @@ To find the best set of configuration settings to set, we can use the `find_best
 ```python
 optimal_config = model.find_best_actions(
     targets={"Output": "maximise"},
-    actionable=["Config_A1", "Config_A2", "Config_A3", "Config_B1", "Config_B2", "Config_B3", "Config_C1", "Config_C2"],
+    actionable=["Setting_A1", "Setting_A2", "Setting_A3", "Setting_B1", "Setting_B2", "Setting_B3", "Setting_C1", "Setting_C2"],
 )
 
 optimal_config.round(2)
@@ -90,6 +90,10 @@ optimal_config.round(2)
 This set of configuration settings can then be applied to the machines in the production line to maximise yield. More precise control for specific scenarios could be achieved by also setting some of the variable inputs to the process using `fixed` in the `find_best_actions` function. But in this example we are optimising across a range of input scenarios that match the data we have.
 
 If running `find_best_actions` in multi-target mode, the multiple targets can be weighted to reflect the relative importance of each objective using the `target_importance` parameter. We'll show an example of using this feature in practice in a future example.
+
+:::note
+We could go even further here. In this example `find_best_actions` is being used to find the best configuration settings for the production line over multiple scenarios (usually by day or shift). However, we could also use it to find the best configuration settings for a specific scenario, by setting the `fixed` parameter to the specific input values for that scenario. This would allow us to optimise the production line for a specific set of input values, rather than across a range of values, giving much more precise control and even greater improvements. However this also requires being able to set the machine settings in real-time, which may not be possible in all cases. If it is possible, then this can be a very powerful tool for improving yield and reducing waste.
+:::
 
 ## Explain the causes of yield
 
