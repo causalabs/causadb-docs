@@ -107,6 +107,14 @@ plot_causal_attributions(model, "Output")
 
 Unlike standard AI models, causal attribution plots show the causal effect of making a tweak to one of the input factors. This is important in systems such as production lines where there are long chains of causality as machines feed their outputs into each other sequentially. Standard AI models usually attribute most cause to the factors nearest to the outcome node because that is where the signal is strongest. Causal models are the only way to accurately attribute causality and make correct optimisation decisions. This is import both for explainability and for making sure that the optimisation decisions are actually correct.
 
+## Comparison with non-causal models
+
+To show why it's vital to use causal models for this kind of problem, we'll compare the results of the causal model with a neural network model, but the same principles apply to all non-causal models, LLMs included. We won't go into the details of training the neural network model here, but you can see the full code in the Github repository. The model is trained on the same data as the causal model, and then an optimisation is to run to find the best configuration settings to maximise yield on the production line. You can see the results below:
+
+![Causal vs Non-Causal Model](production_lines_optimisation_files/yield_comparison.png)
+
+The causal model achieves a higher yield of about 13% than the baseline, whereas the neural network model actually performs worse than the baseline, despite a strong performance on the test set. This is because the neural network model is unable to capture the causal relationships between the variables in the system, and so is unable to make accurate predictions about the effects of changing the configuration settings. This is a problem that would usually only be discovered after the model has been deployed and is making decisions in the real world, which could be extremely costly and even dangerous.
+
 ## Summary
 
 In this example, we've shown how CausaDB can be used to optimise yield on a production line. By modelling the causal relationships between machines and their settings, we can create a kind of causal twin of the real world system. This can be used to find the optimal configuration settings required to maximise yield. We can also use the causal model to explain the causes of yield and their relative magnitudes.
