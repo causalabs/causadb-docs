@@ -20,33 +20,38 @@ Here there are three inputs, leading to different areas of the production line, 
 
 ## Setup
 
-We won't go into the details of setting up CausaDB in this example. If you haven't already set up CausaDB, you can follow the instructions in the [Quickstart Guide](../causadb_quickstart). You can visit the [Github repository](https://github.com/causalabs/causadb-examples/blob/main/python/production_line/main.ipynb) for this example to see the full code.
+We won't go into the details of setting up CausaDB in this example. If you haven't already set up CausaDB, you can follow the instructions in the [Quickstart Guide](../1_causadb_quickstart.md). You can visit the [Github repository](https://github.com/causalabs/causadb-examples/blob/main/python/production_line/main.ipynb) for this example to see the full code.
 
 ## Data
 
-We'll be using a simulated dataset for this example. The dataset contains the following columns:
+We'll be using a simulated dataset for this example. We'll keep the interpretation broad, as similar code can be applied to a wide range of production lines with minimal customisation. 
+
+The dataset contains the following columns:
 
 * `Input_A`, `Input_B`, `Input_C`: The input materials for the production line, this could be raw stock, chemicals, or components coming into the production line from another source.
 * `Setting_*`: Configuration settings for the production line, these could be things like temperature, pressure, or speed settings for each machine at different points along the production line.
 * `Yield_*`: The yield of the production line at different points, this could be the proportion of good products to bad products, or the proportion of raw materials that are converted into useful products at each stage of the production line
 * `Output`: The final output of the production line, again, this could be the proportion of good products to bad products, or the proportion of raw materials that are converted into useful products at the end of the production line.
 
+Each row in this dataset could represent an hour, a shift, a day, or whatever frequency the machine settings might be changed. It's possible that machine settings are changed far less frequently, in which case there may only be a few rows.
+
 ```python
 data = pd.read_csv('production_data.csv')
 data.head()
 ```
 
-|    |   Input_A |   Input_B |   Input_C |   Setting_A1 |   Setting_B1 |   Setting_B2 |   Setting_C1 |   Setting_C2 |   Yield_A1 | Setting_A2 |Yield_B1 |   Setting_B3 |   Yield_A2 |   Setting_A3 |   Yield_B2 |   Yield_C1 |   Yield_A3 |   Yield_B3 |   Yield_C2 |   Output |
-|---:|----------:|----------:|----------:|------------:|------------:|------------:|------------:|------------:|-----------:|------------:|-----------:|------------:|-----------:|------------:|-----------:|-----------:|-----------:|-----------:|-----------:|---------:|
-|  0 |     62.21 |     91.48 |     72.55 |        0.34 |        0.42 |        0.39 |        0.52 |        0.87 |       0.64 |        0.54 |       0.52 |        0.51 |       0.62 |        0.62 |       0.53 |       0.38 |       0.6  |       0.63 |       0.68 |     0.88 |
-|  1 |     74    |    124.91 |     75.04 |        0.65 |        0.34 |        0.35 |        0.27 |        0.63 |       0.54 |        0.74 |       0.47 |        0.54 |       0.73 |        0.69 |       0.45 |       0.2  |       0.75 |       0.57 |       0.41 |     0.85 |
-|  2 |    121.3  |    121.1  |     87.57 |        0.51 |        0.59 |        0.62 |        0.32 |        0.44 |       0.69 |        0.49 |       0.6  |        0.64 |       0.59 |        0.69 |       0.77 |       0.38 |       0.65 |       0.78 |       0.35 |     0.85 |
-|  3 |    116.46 |    115.3  |     94.24 |        0.84 |        0.36 |        0.7  |        0.36 |        0.66 |       0.56 |        0.76 |       0.5  |        0.85 |       0.7  |        0.77 |       0.68 |       0.35 |       0.8  |       0.88 |       0.46 |     0.95 |
-|  4 |     67.43 |    145.29 |     94.29 |        0.68 |        0.39 |        0.59 |        0.49 |        0.7  |       0.44 |        0.81 |       0.53 |        0.67 |       0.65 |        0.94 |       0.63 |       0.49 |       0.82 |       0.84 |       0.66 |     0.99 |
+|    |   Input_A |   Input_B |   Input_C |   Setting_A1 |   Setting_A2 |   Setting_A3 |   Setting_B1 |   Setting_B2 |   Setting_B3 |   Setting_C1 |   Setting_C2 |   Yield_A1 |   Yield_B1 |   Yield_A2 |   Yield_B2 |   Yield_C1 |   Yield_A3 |   Yield_B3 |   Yield_C2 |   Output |
+|---:|----------:|----------:|----------:|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|-------------:|-----------:|-----------:|-----------:|-----------:|-----------:|-----------:|-----------:|-----------:|---------:|
+|  0 |     62.21 |     91.48 |     72.55 |         0    |         0.76 |         0.53 |         0.46 |         1    |         0.59 |         0.66 |         1    |       0.72 |       0.58 |       0.71 |       1    |       0.4  |       0.49 |       1    |       0.82 |     0.89 |
+|  1 |     74    |    124.91 |     75.04 |         0.72 |         0.55 |         0.43 |         0    |         0.59 |         0.96 |         0.52 |         0.58 |       0.41 |       0.14 |       0.32 |       0.32 |       0.03 |       0.3  |       0.71 |       0.31 |     0.69 |
+|  2 |    121.3  |    121.1  |     87.57 |         0.38 |         1    |         1    |         0    |         0.1  |         0.34 |         0    |         0.47 |       0.81 |       0.15 |       1    |       0.19 |       0    |       1    |       0.16 |       0.08 |     0.71 |
+|  3 |    116.46 |    115.3  |     94.24 |         1    |         0.6  |         1    |         0.06 |         0.64 |         0.99 |         0.02 |         0.82 |       0.49 |       0.13 |       0.48 |       0.35 |       0.02 |       1    |       0.8  |       0.28 |     0.85 |
+|  4 |     67.43 |    145.29 |     94.29 |         0.8  |         0.67 |         1    |         0.36 |         0.74 |         0.62 |         0.69 |         0.49 |       0.2  |       0.52 |       0.63 |       0.68 |       0.71 |       0.82 |       0.98 |       0.72 |     0.92 |
+
 
 ## Building a Causal Model
 
-The complexity of production lines means that the causal graphs can be quite large, with many nodes and edges. Fortunately they can often be automatically extracted from schematics like the one above programmatically. We've already done this and stored the nodes and edges as JSON files, so we can load them directly from file.
+The complexity of production lines means that the causal graphs can be quite large, with many nodes and edges. Fortunately they can often be automatically extracted from schematics (as well as other data sources) like the one above programmatically. We've already done this and stored the nodes and edges as JSON files, so we can load them directly from file.
 
 ```python
 with open('nodes.json', 'r') as f:
@@ -79,13 +84,28 @@ Here we can see the causal relationships between different variables in the prod
 To find the best set of configuration settings to set, we can use the `find_best_actions` function to find the combination of configuration settings that will maximise yield. In this case our goal will be solely to maximise the output yield, but in real-world scenarios you may want to balance multiple objectives, such as minimising energy usage or waste production while maximising yield.
 
 ```python
-optimal_config = model.find_best_actions(
+optimal_settings = model.find_best_actions(
     targets={"Output": "maximise"},
     actionable=["Setting_A1", "Setting_A2", "Setting_A3", "Setting_B1", "Setting_B2", "Setting_B3", "Setting_C1", "Setting_C2"],
 )
-
-optimal_config.round(2)
 ```
+
+We can then view the `optimal_settings` object to see what configuration settings are recommended.
+
+```python
+optimal_settings.round(2).T
+```
+
+|            |    0 |
+|:-----------|-----:|
+| Setting_A1 | 0.55 |
+| Setting_A2 | 0.85 |
+| Setting_A3 | 0.98 |
+| Setting_B1 | 0.56 |
+| Setting_B2 | 0.59 |
+| Setting_B3 | 0.74 |
+| Setting_C1 | 0.55 |
+| Setting_C2 | 0.7  |
 
 This set of configuration settings can then be applied to the machines in the production line to maximise yield. More precise control for specific scenarios could be achieved by also setting some of the variable inputs to the process using `fixed` in the `find_best_actions` function. But in this example we are optimising across a range of input scenarios that match the data we have.
 
@@ -103,6 +123,7 @@ Unlike standard AI/ML models that only understand correlations, causal models ca
 plot_causal_attributions(model, "Output")
 ```
 
+
 ![Causal Attributions](production_lines_optimisation_files/causal_attributions.png)
 
 Unlike standard AI models, causal attribution plots show the causal effect of making a tweak to one of the input factors. This is important in systems such as production lines where there are long chains of causality as machines feed their outputs into each other sequentially. Standard AI models usually attribute most cause to the factors nearest to the outcome node because that is where the signal is strongest. Causal models are the only way to accurately attribute causality and make correct optimisation decisions. This is import both for explainability and for making sure that the optimisation decisions are actually correct.
@@ -113,7 +134,7 @@ To show why it's vital to use causal models for this kind of problem, we'll comp
 
 ![Causal vs Non-Causal Model](production_lines_optimisation_files/yield_comparison.png)
 
-The causal model achieves a higher yield of about 13% than the baseline, whereas the neural network model actually performs worse than the baseline, despite a strong performance on the test set. This is because the neural network model is unable to capture the causal relationships between the variables in the system, and so is unable to make accurate predictions about the effects of changing the configuration settings. This is a problem that would usually only be discovered after the model has been deployed and is making decisions in the real world, which could be extremely costly and even dangerous.
+The causal model achieves a higher yield of about 10% above the original, whereas the neural network model actually performs worse than the baseline, despite a strong performance on the test set. This is because the neural network model is unable to capture the causal relationships between the variables in the system, and so is unable to make accurate predictions about the effects of changing the configuration settings. This is a problem that would usually only be discovered after the model has been deployed and is making decisions in the real world, which could be extremely costly and even dangerous.
 
 ## Summary
 
