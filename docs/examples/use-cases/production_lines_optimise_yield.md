@@ -28,8 +28,8 @@ We'll be using a simulated dataset for this example. The dataset contains the fo
 
 * `Input_A`, `Input_B`, `Input_C`: The input materials for the production line, this could be raw stock, chemicals, or components coming into the production line from another source.
 * `Setting_*`: Configuration settings for the production line, these could be things like temperature, pressure, or speed settings for each machine at different points along the production line.
-* `Yield_*`: The yield of the production line at different points, this could be the proportion of good products to bad products, or the proportion of raw materials that are lost as waste.
-* `Output`: The final output of the production line, again, this could be the proportion of good products to bad products, or the proportion of raw materials that are lost as waste.
+* `Yield_*`: The yield of the production line at different points, this could be the proportion of good products to bad products, or the proportion of raw materials that are converted into useful products at each stage of the production line
+* `Output`: The final output of the production line, again, this could be the proportion of good products to bad products, or the proportion of raw materials that are converted into useful products at the end of the production line.
 
 ```python
 data = pd.read_csv('production_data.csv')
