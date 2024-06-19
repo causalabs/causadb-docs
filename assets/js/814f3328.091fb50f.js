@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcausadb_docs=self.webpackChunkcausadb_docs||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"All Updates","items":[{"title":"April 2024","permalink":"/updates/april-2024","unlisted":false},{"title":"March 2024","permalink":"/updates/march-2024","unlisted":false}]}')}}]);

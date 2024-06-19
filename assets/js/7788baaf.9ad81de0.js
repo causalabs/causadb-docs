@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcausadb_docs=self.webpackChunkcausadb_docs||[]).push([[1127],{8002:s=>{s.exports=JSON.parse('{"permalink":"/updates","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"CausaDB updates.","blogTitle":"Updates"}')}}]);
